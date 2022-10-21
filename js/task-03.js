@@ -17,8 +17,8 @@ const images = [
 
 const list = document.querySelector('.gallery');
 list.style.display = 'flex';
- list.insertAdjacentHTML('afterbegin',
- `<li style = "margin-right: 10px"><img style ="width:200px; height:150px;" src=${images[0].url} alt=${images[0].alt} /></li>
-  <li style = "margin-right: 10px"><img style ="width:200px; height:150px;" src=${images[1].url} alt=${images[1].alt} /></li>
-  <li style = "margin-right: 10px"><img style ="width:200px; height:150px;" src=${images[2].url} alt=${images[2].alt} /></li>
- `); 
+
+const arr = images.map(el => `<li style = "margin-right: 10px; list-style: none;"><img style ="width:200px; height:150px;" src=${el.url} alt=${el.alt} /></li>`)
+
+
+ list.insertAdjacentHTML('beforeEnd',arr.join(''));
